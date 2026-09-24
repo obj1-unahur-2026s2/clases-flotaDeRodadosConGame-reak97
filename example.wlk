@@ -140,8 +140,14 @@ class Dependencia{
   method agregarAFlota(unRodado) {
     rodados.add(unRodado)
   }
+  method quitarAFlota(unRodado) {
+    rodados.remove(unRodado)
+  }
   method hayAlMenos3Rodados() {
     return rodados.size() >= 3
+  }
+  method pesoTotalFlota() {
+    return rodados.sum({unRodado => unRodado.peso()})
   }
   method losRodadosVanAMasde100() {
     return rodados.all({unRodado => unRodado.velocidadMaxima() >= 100})
